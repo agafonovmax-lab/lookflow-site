@@ -1,43 +1,108 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LOOKFLOW — Fashion Picks</title>
-  <style>
-    body { font-family: Arial, sans-serif; max-width: 700px; 
-           margin: 40px auto; padding: 20px; line-height: 1.6; 
-           color: #333; }
-    h1 { color: #bfa181; }
-    a { color: #bfa181; }
-    .section { margin-top: 40px; padding-top: 20px; 
-               border-top: 1px solid #eee; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOOKFLOW - Content Manager</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 1px solid #eaeaea;
+        }
+        h1 {
+            color: #111;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 1.2em;
+        }
+        .container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-top: 20px;
+        }
+        h2 {
+            color: #111;
+            border-bottom: 1px solid #eaeaea;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #888;
+            font-size: 0.9em;
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-  <h1>LOOKFLOW</h1>
-  <p>Автоматизированные подборки женской одежды с Wildberries. 
-     Готовые образы, которые можно повторить.</p>
-  <p><a href="https://t.me/lf_outfits">Telegram-канал @lf_outfits</a></p>
-  <p><a href="https://www.pinterest.com/lf_outfits/">Pinterest-профиль</a></p>
 
-  <div class="section" id="privacy">
-    <h2>Политика конфиденциальности</h2>
-    <p>Приложение Lookflow Publisher публикует контент в Pinterest 
-       от имени собственного аккаунта.</p>
-    <p>Мы не собираем, не храним и не передаём третьим лицам 
-       персональные данные пользователей.</p>
-    <p>Все изображения и описания создаются автоматически на основе 
-       информации о товарах, размещённой в открытом доступе на 
-       маркетплейсе Wildberries.</p>
-    <p>Контакт: <a href="https://t.me/lf_outfits">@lf_outfits</a></p>
-  </div>
+    <header>
+        <h1>LOOKFLOW</h1>
+        <div class="subtitle">Инструмент для автоматизации контент-фабрики</div>
+    </header>
 
-  <div class="section">
-    <h2>О приложении</h2>
-    <p>Lookflow Publisher — инструмент для создания и публикации 
-       контента в социальных сетях. Приложение использует Pinterest 
-       API для публикации пинов от имени владельца аккаунта.</p>
-  </div>
+    <div class="container">
+        <h2 id="about">О проекте</h2>
+        <p><strong>LOOKFLOW Content Manager</strong> — это десктопное приложение (на базе Python и PySide6), разработанное для оптимизации и автоматизации рабочего процесса создателей контента и владельцев бизнес-аккаунтов.</p>
+        <p>Наше приложение помогает собирать данные о товарах, подготавливать визуальный контент (включая наложение текста и создание коллажей) и публиковать готовые материалы на различных платформах.</p>
+
+        <h2 id="how-it-works">Как это работает</h2>
+        <ul>
+            <li><strong>Сбор контента:</strong> Приложение агрегирует информацию и фотографии для будущих публикаций.</li>
+            <li><strong>Обработка:</strong> Встроенные инструменты позволяют подготовить изображения к публикации в высоком качестве.</li>
+            <li><strong>Публикация:</strong> Используя официальные API платформ, приложение публикует готовые посты и пины на доски пользователя.</li>
+        </ul>
+
+        <h2 id="api-usage">Использование Pinterest API</h2>
+        <p>Наше приложение запрашивает доступ к Pinterest API для выполнения следующих задач:</p>
+        <ul>
+            <li><strong>Чтение досок (<code>boards:read</code>):</strong> Чтобы показать список доступных досок пользователя для выбора места публикации.</li>
+            <li><strong>Создание пинов (<code>pins:write</code>, <code>pins:read</code>):</strong> Для загрузки подготовленных изображений и публикации их в виде пинов на выбранные доски.</li>
+        </ul>
+        <p>Приложение не собирает и не передает третьим лицам ваши личные данные. Весь контент публикуется исключительно от имени авторизованного пользователя.</p>
+
+        <h2 id="privacy">Политика конфиденциальности</h2>
+        <p>Дата последнего обновления: 20 октября 2026 г.</p>
+        <p>Мы уважаем вашу конфиденциальность и стремимся защищать ваши личные данные.</p>
+        <ul>
+            <li><strong>Сбор данных:</strong> Приложение не собирает персональные данные (такие как имя, адрес электронной почты или пароли). Авторизация происходит через официальный протокол OAuth 2.0 платформы Pinterest.</li>
+            <li><strong>Использование данных:</strong> Токены доступа используются исключительно для выполнения запросов к API от вашего имени (например, для публикации пина). Мы не храним эти токены на сторонних серверах.</li>
+            <li><strong>Передача данных:</strong> Мы не передаем, не продаем и не делимся вашими данными или токенами доступа с третьими лицами.</li>
+            <li><strong>Безопасность:</strong> Приложение работает локально на вашем компьютере, что минимизирует риски утечки данных.</li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>По всем вопросам обращайтесь: <a href="https://t.me/ваш_телеграм_ник">Telegram</a> или на почту: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+        <p>&copy; 2026 LOOKFLOW. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
